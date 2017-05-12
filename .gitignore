@@ -1,0 +1,10 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node ephemeral files
+node_modules
+*.log
+
+# RFC trace files
+*.trc

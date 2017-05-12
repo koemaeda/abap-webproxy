@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>ABAP Web Proxy</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZWEBPROXYTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZWEBPROXY</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZWEBPROXY_HANDLE_REQUEST</FUNCNAME>
+     <INCLUDE>LZWEBPROXYU01</INCLUDE>
+     <REMOTE_CALL>X</REMOTE_CALL>
+     <SHORT_TEXT>Handle HTTP request</SHORT_TEXT>
+     <REMOTE_BASXML>X</REMOTE_BASXML>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>METHOD</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>URI</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>REQUEST_HEADERS</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>TIHTTPNVP</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>POST_DATA_B64</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>HTTP_VERSION_MAJOR</PARAMETER>
+       <DEFAULT>1</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>HTTP_VERSION_MINOR</PARAMETER>
+       <DEFAULT>1</DEFAULT>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PROXY_HOST</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PROXY_PORT</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>I</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PROXY_USERNAME</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+      <RSIMP>
+       <PARAMETER>PROXY_PASSWORD</PARAMETER>
+       <OPTIONAL>X</OPTIONAL>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>SUBRC</PARAMETER>
+       <TYP>SYSUBRC</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>CODE</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>MESSAGE</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>RESPONSE_HEADERS</PARAMETER>
+       <TYP>TIHTTPNVP</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DATA_B64</PARAMETER>
+       <TYP>SOLI_TAB</TYP>
+      </RSEXP>
+      <RSEXP>
+       <PARAMETER>DATA_LENGTH</PARAMETER>
+       <TYP>I</TYP>
+      </RSEXP>
+     </EXPORT>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>METHOD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP method (GET/POST/etc)</STEXT>
+       <INDEX> 001</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>URI</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>URI (target address)</STEXT>
+       <INDEX> 002</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>REQUEST_HEADERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP Framework (iHTTP) Table Name/Value Pairs</STEXT>
+       <INDEX> 003</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>POST_DATA_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>POST data (base64)</STEXT>
+       <INDEX> 004</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HTTP_VERSION_MAJOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP version (major)</STEXT>
+       <INDEX> 005</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>HTTP_VERSION_MINOR</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP version (minor)</STEXT>
+       <INDEX> 006</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PROXY_HOST</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy host</STEXT>
+       <INDEX> 007</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PROXY_PORT</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy port</STEXT>
+       <INDEX> 008</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PROXY_USERNAME</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy user name (for authentication if necessary)</STEXT>
+       <INDEX> 009</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>PROXY_PASSWORD</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Proxy password (for authentication if necessary)</STEXT>
+       <INDEX> 010</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>SUBRC</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Código de retorno</STEXT>
+       <INDEX> 011</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>CODE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP status code</STEXT>
+       <INDEX> 012</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>MESSAGE</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP status message</STEXT>
+       <INDEX> 013</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>RESPONSE_HEADERS</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>HTTP Framework (iHTTP) Table Name/Value Pairs</STEXT>
+       <INDEX> 014</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATA_B64</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Response body (base64 encoded)</STEXT>
+       <INDEX> 015</INDEX>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>DATA_LENGTH</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Length of the body (decoded, in bytes)</STEXT>
+       <INDEX> 016</INDEX>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+   <DYNPROS/>
+   <CUA/>
+  </asx:values>
+ </asx:abap>
+</abapGit>

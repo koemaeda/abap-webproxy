@@ -1,0 +1,22 @@
+{
+  "http": {
+    "listenPort": 3128
+  },
+  "rfc": {
+    "user": "BCUSER",
+    "passwd": "mypass",
+    "ashost": "10.200.1.10",
+    "sysnr": "00",
+    "client": "100",
+    "saprouter": "",
+    "maxIdleTime": 108000,
+    "checkInterval": 60,
+    "waitTimeout": 60
+  },
+  "proxy": {
+    "host": "",
+    "port": 0,
+    "username": "",
+    "password": ""
+  }
+}
