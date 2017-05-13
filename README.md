@@ -5,10 +5,10 @@
 It is useful for accessing internal/intranet websites when all you have is a limited VPN connection or a saprouter access.
 
 ```
- /---------\                     /----------\                 /--------\
-|  Browser  |   HTTP request    |   Node.js  |   RFC call    |   ABAP   |
-|           | ----------------> |   script   | ------------> |  server  |
- \---------/                     \----------/                 \--------/
+ /---------\                     /----------\                 /--------\                    /------\
+|  Browser  |   HTTP request    |   Node.js  |   RFC call    |   ABAP   |   HTTP request   |  Web   |
+|           | ----------------> |   script   | ------------> |  server  | ---------------> | Server |
+ \---------/                     \----------/                 \--------/                    \------/
  ```
 
 Node.js version: 6 or higher
