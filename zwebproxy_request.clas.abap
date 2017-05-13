@@ -80,6 +80,16 @@ CLASS ZWEBPROXY_REQUEST IMPLEMENTATION.
 
 
   method constructor.
+*----------------------------------------------------------------------
+*
+* ABAP Web Proxy
+* https://github.com/koemaeda/abap-web-proxy
+*
+* Copyright (c) 2017 Guilherme Maeda
+* Licensed under the MIT license.
+*
+*----------------------------------------------------------------------
+
     "// Read client/server information
     data: lv_terminal type usr41-terminal.
     call function 'TERMINAL_ID_GET'

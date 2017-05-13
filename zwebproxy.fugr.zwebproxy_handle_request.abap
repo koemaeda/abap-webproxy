@@ -20,7 +20,14 @@ function zwebproxy_handle_request.
 *"     VALUE(DATA_B64) TYPE  SOLI_TAB
 *"     VALUE(DATA_LENGTH) TYPE  I
 *"----------------------------------------------------------------------
-
+*
+* ABAP Web Proxy
+* https://github.com/koemaeda/abap-web-proxy
+*
+* Copyright (c) 2017 Guilherme Maeda
+* Licensed under the MIT license.
+*
+*"----------------------------------------------------------------------
   data(lo_request) = new zwebproxy_request(
     method = method
     uri = uri
