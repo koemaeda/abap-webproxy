@@ -132,6 +132,9 @@ CLASS ZWEBPROXY_REQUEST IMPLEMENTATION.
       return.
     endif.
 
+    clear me->http_client->propertytype_redirect.
+    me->http_client->set_compression( if_http_client=>co_compress_none ).
+
     "// Proxy authentication
     if proxy_username is not initial.
       me->http_client->authenticate(
@@ -233,8 +236,6 @@ CLASS ZWEBPROXY_REQUEST IMPLEMENTATION.
       return.
     endif.
 
-    data(lv_teste) = cl_http_utility=>decode_utf8( me->http_request->to_xstring( ) ).
-
     me->http_response = me->http_client->response.
     me->http_response->get_status( importing
       code = me->response_code reason = me->response_message ).
@@ -260,5 +261,15 @@ CLASS ZWEBPROXY_REQUEST IMPLEMENTATION.
       condense: lv_name, lv_value.
       append value #( name = lv_name value = lv_value ) to me->response_headers.
     endloop.
+
+    "// iHTTP *always* decompresses our data... so we must return it as 'identity'
+    assign me->response_headers[ name = 'content-encoding' ] to field-symbol(<ce>).
+    if sy-subrc = 0.
+      <ce>-value = 'identity'.
+      assign me->response_headers[ name = 'content-length' ] to field-symbol(<cl>).
+      if sy-subrc = 0.
+        <cl>-value = xstrlen( me->response_data ).
+      endif.
+    endif.
   endmethod.
 ENDCLASS.

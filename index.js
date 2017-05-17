@@ -25,15 +25,14 @@ var server = http.createServer(function(request, response) {
   console.log('(HTTP Server) Request received:', request.method, request.url);
 
   // Receive complete request data
-  var postData = new Buffer(parseInt(request.headers['content-length']));
-  var postDataBufPos = 0;
+  var postDataChunks = [];
   request.on('data', (chunk) => {
-    chunk.copy(postData, postDataBufPos);
-    postDataBufPos += chunk.length;
+    postDataChunks.push(chunk);
   });
 
   // Complete request received, serve it!
   request.on('end', () => {
+    var postData = Buffer.concat(postDataChunks);
     conn.handleRequest(request, postData, response, () => {
       console.log('(HTTP Server) Request served:', request.method, request.url,
         '=>', response.statusCode, response.statusMessage);

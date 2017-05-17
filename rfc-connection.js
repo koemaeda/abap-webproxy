@@ -42,10 +42,6 @@ Connection.prototype.getClientVersion = function() {
   return this.client.getVersion();
 };
 
-Connection.prototype.readConfig = function() {
-  // TODO - read json file
-};
-
 Connection.prototype.checkConnection = function() {
   // Check if we should really bother the client connection
   if (this.status.connecting)
