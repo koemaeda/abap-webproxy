@@ -29,6 +29,8 @@ Use [abapGit](https://github.com/larshp/abapGit) to install the RFC function mod
 
 ### 3) Run the node.js script
 
+Run `npm install` to install the dependencies.
+
 Edit the configuration parameters in the `config.json` file to set the proper SAP credentials.
 
 ```
